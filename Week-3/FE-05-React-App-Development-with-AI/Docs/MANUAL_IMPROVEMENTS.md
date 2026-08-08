@@ -13,3 +13,5 @@ After reviewing AI-generated suggestions, the following improvements were made m
 - Added edit and delete actions.
 - Improved spacing, typography, buttons, and status badges.
 - Removed unnecessary external dependencies and APIs to keep the project lightweight.
+
+These changes were made after reviewing, testing, and evaluating AI-generated suggestions. The goal was to keep the application simple, maintainable, user-friendly, and appropriate for the assignment scope.
