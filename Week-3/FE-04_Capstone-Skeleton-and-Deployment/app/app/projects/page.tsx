@@ -1,0 +1,6 @@
+const projects=[
+["01","AI Internship Landing Page","A responsive landing page built to communicate an AI internship program clearly, with structured sections and a polished user experience.","HTML · CSS · JavaScript","Web Development"],
+["02","FlyRank AI Engineering Portfolio","A recruiter-friendly portfolio case study presenting AI-assisted engineering work, project outcomes, and clear information architecture.","React · Next.js · AI-assisted workflow","AI + Frontend"],
+["03","Student Performance Analysis","A data-analysis project exploring student performance with Python, Pandas, SQL, and spreadsheet-based reporting.","Python · Pandas · SQL · Excel","Data Analytics"]
+];
+export default function ProjectsPage(){return <section className="page-section shell"><p className="eyebrow">Selected Work</p><h1>Case Studies</h1><p className="lead">A collection of projects demonstrating practical development, data, and AI-assisted engineering skills.</p><div className="project-grid">{projects.map(([n,t,d,s,type])=><article className="project-card" key={n}><div className="project-top"><span>{n}</span><span>{type}</span></div><h2>{t}</h2><p>{d}</p><div className="tag">{s}</div></article>)}</div></section>}
