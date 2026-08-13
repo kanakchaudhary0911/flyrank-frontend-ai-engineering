@@ -1,12 +1,6 @@
 
 ---
-
-# 2. Root `README.md`
-
-Tumhara root README bhi update karna hai, especially **Week-3 structure**.
-
-**Current root README ko replace karke ye daalo:**
-
+ 
 ```md
 # FlyRank Frontend AI Engineering
 
