@@ -1,0 +1,2 @@
+import * as React from "react"; import {Tabs as BaseTabs} from "@base-ui/react/tabs";
+export const Tabs=BaseTabs.Root; export const TabsList=React.forwardRef<HTMLDivElement,React.ComponentProps<typeof BaseTabs.List>>((p,r)=><BaseTabs.List ref={r} {...p}/>); TabsList.displayName="TabsList"; export const TabsTrigger=BaseTabs.Tab; export const TabsContent=BaseTabs.Panel;

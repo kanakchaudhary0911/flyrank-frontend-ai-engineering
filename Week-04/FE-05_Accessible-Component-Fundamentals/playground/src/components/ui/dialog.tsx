@@ -1,0 +1,3 @@
+import * as React from "react"; import {Dialog as BaseDialog} from "@base-ui/react/dialog";
+export const Dialog=BaseDialog.Root; export const DialogTrigger=BaseDialog.Trigger; export const DialogPortal=BaseDialog.Portal; export const DialogClose=BaseDialog.Close; export const DialogTitle=BaseDialog.Title; export const DialogDescription=BaseDialog.Description; export const DialogOverlay=BaseDialog.Backdrop;
+export const DialogContent=React.forwardRef<HTMLDivElement,React.ComponentProps<typeof BaseDialog.Popup>>((p,r)=><BaseDialog.Popup ref={r} {...p}/>); DialogContent.displayName="DialogContent";

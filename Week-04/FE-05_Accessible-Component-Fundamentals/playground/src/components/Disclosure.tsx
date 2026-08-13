@@ -1,0 +1,2 @@
+import {useId,useState} from "react"; interface DisclosureProps{title:string;children:React.ReactNode;defaultOpen?:boolean}
+export function Disclosure({title,children,defaultOpen=false}:DisclosureProps){const[open,setOpen]=useState(defaultOpen),id=useId();return <section className="disclosure"><button aria-expanded={open} aria-controls={id} onClick={()=>setOpen(v=>!v)}>{open?"−":"+"} {title}</button><div id={id} hidden={!open}>{children}</div></section>}

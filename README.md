@@ -1,12 +1,8 @@
-
----
- 
-```md
 # FlyRank Frontend AI Engineering
 
 This repository contains my weekly assignments, projects, experiments, and learning progress completed as part of the **FlyRank Frontend AI Engineering** program.
 
-The repository documents my journey through AI-assisted software development, prompt engineering, frontend engineering, Git workflows, documentation, testing, and practical project development.
+The repository documents my journey through AI-assisted software development, prompt engineering, frontend engineering, accessibility, Git workflows, documentation, testing, debugging, and practical project development.
 
 The goal is to build strong engineering fundamentals while learning how to use AI effectively as a development assistant.
 
@@ -16,15 +12,21 @@ The goal is to build strong engineering fundamentals while learning how to use A
 
 ### Week 1 – Environment, Toolchain & AI Workflow
 
-Focused on setting up the development environment, AI tools, workflow foundations, and initial frontend engineering practices.
+Focused on setting up the development environment, AI tools, workflow foundations, Git and GitHub practices, and initial frontend engineering workflows.
 
 ### Week 2 – AI-Assisted Workflow & Prompting
 
-Focused on AI-assisted development workflows, prompting fundamentals, documentation, and practical case-study development.
+Focused on AI-assisted development workflows, prompting fundamentals, documentation, reusable project rules, and practical AI-assisted software development.
 
 ### Week 3 – Frontend AI Engineering
 
-Focused on building practical frontend applications with AI assistance, Next.js project structure, React development, testing, debugging, deployment preparation, and manual code improvements.
+Focused on building practical frontend applications with AI assistance, React development, project structure, testing, debugging, deployment preparation, and manual code improvements.
+
+### Week 4 – Accessible Component Fundamentals
+
+Focused on frontend accessibility, WAI-ARIA patterns, keyboard interaction, focus management, and building reusable accessible React components from scratch.
+
+The week also includes a source-level review of open-code components from **shadcn/ui Base UI** to understand how production-oriented components handle accessibility and interaction details.
 
 ---
 
@@ -60,5 +62,32 @@ FLYRANK-FRONTEND-AI-ENGINEERING/
 │           ├── AI_PROMPTS.md
 │           ├── MANUAL_IMPROVEMENTS.md
 │           └── WORKFLOW.md
+│
+├── Week-4/
+│   ├── README.md
+│   │
+│   └── FE-05_Accessible-Component-Fundamentals-COMPLETE/
+│       ├── README.md
+│       ├── NOTES.md
+│       │
+│       └── playground/
+│           ├── src/
+│           │   ├── components/
+│           │   │   ├── Modal.tsx
+│           │   │   ├── Tabs.tsx
+│           │   │   ├── Disclosure.tsx
+│           │   │   └── ui/
+│           │   │       ├── dialog.tsx
+│           │   │       └── tabs.tsx
+│           │   │
+│           │   ├── App.tsx
+│           │   ├── App.css
+│           │   ├── index.css
+│           │   └── main.tsx
+│           │
+│           ├── package.json
+│           ├── tsconfig.json
+│           ├── vite.config.ts
+│           └── index.html
 │
 └── README.md
