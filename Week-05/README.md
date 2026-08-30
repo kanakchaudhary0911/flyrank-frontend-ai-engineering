@@ -2,7 +2,7 @@
 
 This folder contains the work completed during **Week 5** of the FlyRank Frontend AI Engineering program.
 
-The focus of this week is working with AI tools, structured tool results, server-side tool execution, and building frontend interfaces that integrate AI capabilities using the AI SDK and Google Gemini.
+The focus of this week was working with AI-powered frontend applications, server-side tools, structured tool results, error states, empty states, edge cases, and reliable AI interaction using the AI SDK and Google Gemini.
 
 ---
 
@@ -11,7 +11,7 @@ The focus of this week is working with AI tools, structured tool results, server
 | Assignment | Title | Status |
 |---|---|---|
 | FE-07 | Tool Results & Structured Output | ✅ Completed |
-| FE-08 | *(To be added)* | ⏳ Upcoming |
+| FE-08 | Error States, Empty States & Edge Cases | ✅ Completed |
 
 ---
 
@@ -23,11 +23,11 @@ The focus of this week is working with AI tools, structured tool results, server
 
 Build an AI-powered frontend application that uses server-side tools with structured input and output, executes tool calls, and presents the resulting information through the AI chat interface.
 
-The assignment focuses on understanding how AI applications can use tools to perform specific tasks and return structured results instead of relying only on the model's own knowledge.
+The assignment focused on understanding how AI applications can use tools to perform specific tasks and return structured results instead of relying only on the model's own knowledge.
 
 **Key Activities**
 
-- Define a server-side AI tool
+- Define server-side AI tools
 - Use Zod schemas for structured tool input
 - Execute tools on the server
 - Return structured tool results
@@ -36,8 +36,8 @@ The assignment focuses on understanding how AI applications can use tools to per
 - Implement a content analysis tool
 - Implement a website analysis tool
 - Test tool execution through natural-language prompts
-- Display tool results through the chat interface
-- Verify successful API and tool execution
+- Display structured tool results through the chat interface
+- Verify API and tool execution
 - Document AI assistance and manual improvements
 
 **Technology Used**
@@ -72,11 +72,58 @@ The assignment focuses on understanding how AI applications can use tools to per
 
 ---
 
-### FE-08 – *(Upcoming)*
+### FE-08 – Error States, Empty States & Edge Cases
 
-**Status:** ⏳ Upcoming
+**Objective**
 
-Details for this assignment will be added once it is assigned.
+Build an AI-powered frontend application that demonstrates appropriate handling of error states, empty states, and edge cases during AI interactions.
+
+The assignment focused on making the application more reliable and user-friendly when an AI request cannot be completed successfully.
+
+**Key Activities**
+
+- Build an AI-powered chat interface
+- Connect the frontend to a server-side AI route
+- Handle AI/API failures
+- Display a clear error state to the user
+- Provide a Retry action after failed requests
+- Show loading/processing feedback during retry
+- Test API failures and error scenarios
+- Capture terminal evidence of API errors
+- Verify the application's error-state UI
+- Handle edge cases during AI interaction
+- Maintain a clear and consistent user experience
+- Verify the production build
+
+**Technology Used**
+
+- React
+- TypeScript
+- Next.js
+- Next.js App Router
+- AI SDK
+- Google Gemini
+- CSS
+- Environment Variables
+- npm
+
+**Skills Practiced**
+
+- AI Error Handling
+- Error States
+- Empty States
+- Edge Cases
+- Retry UX
+- Loading States
+- API Error Handling
+- Streaming AI
+- React
+- Next.js
+- TypeScript
+- Debugging
+- Testing
+- UI/UX
+- Documentation
 
 ---
 
@@ -87,7 +134,42 @@ Week-05/
 │
 ├── README.md
 │
-└── FE-07_Tool-Results-Structured-Output/
+├── FE-07_Tool-Results-Structured-Output/
+│   │
+│   ├── README.md
+│   ├── AI_ASSISTANCE.md
+│   ├── AI_PROMPTS.md
+│   ├── MANUAL_IMPROVEMENTS.md
+│   │
+│   ├── screenshots/
+│   │   ├── Tool Analysis.png
+│   │   ├── Website Analysis.png
+│   │   └── ...
+│   │
+│   └── app/
+│       ├── app/
+│       │   ├── api/
+│       │   │   └── chat/
+│       │   │       └── route.ts
+│       │   │
+│       │   ├── globals.css
+│       │   ├── layout.tsx
+│       │   └── page.tsx
+│       │
+│       ├── lib/
+│       │   ├── model.ts
+│       │   └── tools/
+│       │       ├── analyze-content.ts
+│       │       └── analyze-website.ts
+│       │
+│       ├── .env.example
+│       ├── .gitignore
+│       ├── next-env.d.ts
+│       ├── package.json
+│       ├── package-lock.json
+│       └── tsconfig.json
+│
+└── FE-08_Error-States-Empty-States-Edge-Cases/
     │
     ├── README.md
     ├── AI_ASSISTANCE.md
@@ -95,8 +177,10 @@ Week-05/
     ├── MANUAL_IMPROVEMENTS.md
     │
     ├── screenshots/
-    │   ├── Tool Analysis.png
-    │   ├── Website Analysis.png
+    │   ├── FE-08_01_Basic-UI.png
+    │   ├── FE-08_02_Error-State.png
+    │   ├── FE-08_03_Retry-Processing.png
+    │   ├── FE-08_04_API-Error-Log.png
     │   └── ...
     │
     └── app/
@@ -112,7 +196,8 @@ Week-05/
         ├── lib/
         │   ├── model.ts
         │   └── tools/
-        │       └── analyze-content.ts
+        │       ├── analyze-content.ts
+        │       └── analyze-website.ts
         │
         ├── .env.example
         ├── .gitignore
@@ -124,31 +209,80 @@ Week-05/
 
 ---
 
-## What I Learned (FE-07)
+## What I Learned
 
-- Connecting a tool to the AI SDK's `streamText` workflow made it clear how the model decides *when* to call a tool versus answering directly from its own knowledge.
-- Using Zod for tool input validation caught malformed inputs (like an invalid URL) before they ever reached the tool's execution logic — much safer than trusting the model's output blindly.
-- `stepCountIs` was essential for multi-step flows — without it, the model would stop right after the tool call instead of using the result to form a final response.
-- Building the website analysis tool showed how much real-world messiness (missing meta tags, unreachable URLs, inconsistent HTML) needs to be handled even for a "simple" scraping task.
-- Structured tool output (JSON) is far more reliable to render in the UI than parsing free-form text out of a model's response.
-- Documenting AI assistance versus manual improvements side-by-side made it easier to see exactly where I had to step in and fix or refine what the AI produced.
+**FE-07**
+
+- Connecting tools to the AI SDK's `streamText` workflow demonstrated how an AI model can decide when to call a server-side tool.
+- Zod schemas provided structured validation for tool inputs.
+- `stepCountIs` helped support multi-step tool execution.
+- Structured tool output was easier and more reliable to render in the UI than free-form text.
+- Website analysis demonstrated the importance of handling real-world fetch and parsing issues.
+- AI assistance can accelerate development, but generated suggestions still require manual review and testing.
+
+**FE-08**
+
+- AI applications need dedicated error states instead of leaving users with an unexplained failed request.
+- A clear error message helps users understand that the request could not be completed.
+- A Retry action provides a simple recovery path without requiring the user to restart the application.
+- Loading feedback during retry makes the interface feel responsive and prevents confusion while another request is being processed.
+- Testing with an actual API quota failure helped verify the application's error-handling behaviour.
+- Terminal logs are useful for identifying the difference between a frontend error state and the underlying server/API failure.
+- Edge-case handling is an important part of making AI applications reliable rather than only functional in the happy path.
 
 ---
 
-## What I Enjoyed Most (FE-07)
+## What I Enjoyed Most
 
-- Seeing the model autonomously decide to call `analyzeContent` or `analyzeWebsite` based purely on the phrasing of a prompt felt like a real "aha" moment for how tool-calling actually works.
-- Getting structured, well-formatted results (score, category, key points) to render cleanly in the chat UI was satisfying — it felt like a genuine step up from a plain text-only chatbot.
-- Testing edge cases on the website analysis tool (broken links, slow sites) and watching the error handling kick in gracefully was one of the more rewarding debugging sessions this month.
+- Seeing the AI model call server-side tools and return structured information in FE-07 was an important step toward understanding practical AI application development.
+- Building the error and retry flow in FE-08 showed how frontend UX needs to respond when external AI services fail.
+- Testing the application with real API failures made the error-state implementation more meaningful than testing only successful responses.
+- Working across AI integration, frontend UI, API routes, debugging, and documentation provided a more complete development workflow.
 
 ---
 
 ## Week 5 Summary
 
-Week 5 is moving beyond a simple text-in, text-out AI chat into building an application where the AI can actually **do things** — calling server-side tools, validating inputs, and returning structured results. FE-07 reinforced that reliable AI-powered features depend as much on schema validation and multi-step orchestration as they do on the model's raw capability. FE-08 will extend this work further.
+Week 5 moved beyond a basic text-in/text-out AI chat and focused on building more reliable AI-powered frontend applications.
+
+FE-07 introduced server-side tool calling, Zod validation, structured results, and multi-step AI workflows.
+
+FE-08 extended the application experience by focusing on error states, retry behaviour, loading feedback, empty states, and edge-case handling.
+
+Together, the assignments demonstrated the complete flow:
+
+```text
+User Interaction
+       ↓
+Frontend AI Interface
+       ↓
+Server-Side AI Route
+       ↓
+AI Model / Tool Execution
+       ↓
+Success or Error
+       ↓
+Structured Result / Error State
+       ↓
+User Feedback
+```
 
 ---
 
 ## Week 5 Status
 
-🔄 **Week 5 In Progress — FE-07 completed, FE-08 upcoming.**
+✅ **Week 5 Completed**
+
+Both assignments have been completed, tested, documented, and verified.
+
+- [x] FE-07 completed
+- [x] FE-08 completed
+- [x] AI assistance documented
+- [x] AI prompts documented
+- [x] Manual improvements documented
+- [x] Screenshots prepared
+- [x] Local testing completed
+- [x] Production build verified
+- [x] Week 5 documentation completed
+
+**Week 5 is complete.**
