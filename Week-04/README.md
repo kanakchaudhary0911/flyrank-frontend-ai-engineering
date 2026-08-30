@@ -6,6 +6,15 @@ The focus of this week was building accessible React components from first princ
 
 ---
 
+## Week 4 Overview
+
+| Assignment | Title | Status |
+|---|---|---|
+| FE-05 | Accessible Component Fundamentals | ✅ Completed |
+| FE-06 | Streaming AI Chat | ✅ Completed |
+
+---
+
 ## Assignments
 
 ### FE-05 – Accessible Component Fundamentals
@@ -18,15 +27,15 @@ The assignment focuses on understanding accessibility fundamentals before relyin
 
 **Key Activities**
 
-* Build a Modal Dialog from scratch
-* Build accessible Tabs from scratch
-* Build an accessible Disclosure component
-* Implement appropriate ARIA semantics
-* Support keyboard-only interaction
-* Implement modal focus trapping and focus restoration
-* Test keyboard navigation and interaction
-* Review shadcn/ui open-code Dialog and Tabs implementations
-* Document gaps between the hand-built components and shadcn/ui
+- Build a Modal Dialog from scratch
+- Build accessible Tabs from scratch
+- Build an accessible Disclosure component
+- Implement appropriate ARIA semantics
+- Support keyboard-only interaction
+- Implement modal focus trapping and focus restoration
+- Test keyboard navigation and interaction
+- Review shadcn/ui open-code Dialog and Tabs implementations
+- Document gaps between the hand-built components and shadcn/ui
 
 ---
 
@@ -40,60 +49,34 @@ The assignment focuses on understanding how frontend applications communicate wi
 
 **Key Activities**
 
-* Build a modern AI chat interface
-* Create a responsive conversation layout
-* Implement user and AI message bubbles
-* Connect the frontend to an API route
-* Use the AI SDK for model interaction
-* Integrate Google Gemini as the AI provider
-* Implement real-time streaming responses
-* Display a loading/streaming state while the AI responds
-* Handle API and model errors
-* Configure the Gemini API key through environment variables
-* Build the application using Next.js App Router
-* Test the complete request → API → AI → streamed response flow
+- Build a modern AI chat interface
+- Create a responsive conversation layout
+- Implement user and AI message bubbles
+- Connect the frontend to an API route
+- Use the AI SDK for model interaction
+- Integrate Google Gemini as the AI provider
+- Implement real-time streaming responses
+- Display a loading/streaming state while the AI responds
+- Handle API and model errors
+- Configure the Gemini API key through environment variables
+- Build the application using Next.js App Router
+- Test the complete request → API → AI → streamed response flow
 
 **Technology Used**
 
-* React
-* TypeScript
-* Next.js
-* Next.js App Router
-* AI SDK
-* Google Gemini
-* CSS
-* Environment Variables
-* npm
+- React
+- TypeScript
+- Next.js
+- Next.js App Router
+- AI SDK
+- Google Gemini
+- CSS
+- Environment Variables
+- npm
 
 **Result**
 
 The completed application provides a polished AI conversation interface where the user can enter a prompt and receive a response from Gemini in a streaming experience.
-
----
-
-## Learning Outcomes
-
-By completing this week's assignments, I learned how to:
-
-* Implement accessible interactive components in React
-* Apply WAI-ARIA patterns to common UI widgets
-* Handle keyboard interactions without relying on component libraries
-* Manage focus correctly inside modal dialogs
-* Restore focus after closing a modal
-* Implement arrow-key navigation for tabs
-* Understand the difference between semantic HTML and ARIA requirements
-* Review accessibility-focused component source code
-* Compare custom implementations with production-oriented component implementations
-* Identify accessibility and engineering gaps in AI-assisted component development
-* Build a real-time AI chat interface
-* Connect a React/Next.js frontend to an AI backend route
-* Work with the AI SDK for AI model integration
-* Integrate Google Gemini into a web application
-* Implement streamed AI responses
-* Manage loading and streaming states in the UI
-* Handle API errors and model availability issues
-* Use environment variables for API configuration
-* Understand the request and response flow of an AI-powered frontend application
 
 ---
 
@@ -154,6 +137,25 @@ Week-4/
 
 ---
 
+## What I Learned
+
+- Implementing accessibility from scratch (instead of using a library) made me understand *why* patterns like focus trapping and ARIA roles exist, not just how to use them.
+- Managing focus correctly inside a modal — trapping it while open and restoring it to the trigger on close — was trickier in practice than it looks in documentation.
+- Reviewing shadcn/ui's Dialog and Tabs source code revealed engineering details (edge cases, ARIA attribute handling) my own implementation had missed.
+- Building FE-06 showed how much UX depends on perceived responsiveness — a streaming response feels dramatically faster than the same content delivered all at once.
+- Wiring a frontend to an AI model through an API route (rather than calling the model directly from the client) reinforced why keeping API keys server-side matters.
+- Handling loading/streaming states and API errors together required more careful state management than a typical CRUD app.
+
+---
+
+## What I Enjoyed Most
+
+- Getting the Modal's focus trap and restoration working correctly felt like a genuine "aha" moment — small detail, big impact on real usability.
+- Comparing my hand-built Tabs and Dialog against shadcn/ui's actual source was one of the more valuable exercises this month — it's rare to get a direct benchmark against production code.
+- Watching Gemini's response stream in token-by-token for the first time in FE-06 made the whole "AI chat interface" concept click in a way that a static request/response demo never did.
+
+---
+
 ## Week 4 Summary
 
 Week 4 combined **accessibility engineering** with **AI-powered frontend development**.
@@ -163,3 +165,9 @@ In **FE-05**, I focused on understanding how interactive components should behav
 In **FE-06**, I applied frontend AI engineering concepts by building a complete streaming AI chat application with **Next.js, React, TypeScript, the AI SDK, and Google Gemini**.
 
 Together, these assignments strengthened my understanding of building frontend applications that are both **accessible and AI-enabled**.
+
+---
+
+## Week 4 Status
+
+✅ **Week 4 Completed — All assignments finished, tested, and documented.**

@@ -1,12 +1,4 @@
-
----
-
-# 2. `Week-3/FE-05-React-App-Development-with-AI/README.md`
-
-Aur ye **FE-05 ke folder ke andar wala README** hai:
-
-```markdown
-# FE-05 – React App Development with AI
+# FE-04 – React App Development with AI
 
 ## Overview
 
@@ -68,32 +60,58 @@ The Job Application Tracker is a responsive web application for managing job app
 ## Application Structure
 
 ```text
-app/
+FE-04-React-App-Development-with-AI/
 │
-├── public/
+├── README.md
+├── CLAUDE.md
+├── WORKFLOW.md
+├── AI_ASSISTANCE.md
+├── MANUAL_IMPROVEMENTS.md
 │
-├── src/
-│   ├── assets/
-│   │
-│   ├── components/
-│   │   ├── FilterBar.jsx
-│   │   ├── Header.jsx
-│   │   ├── JobCard.jsx
-│   │   ├── JobForm.jsx
-│   │   ├── JobList.jsx
-│   │   ├── SearchBar.jsx
-│   │   └── ThemeToggle.jsx
-│   │
-│   ├── styles/
-│   │   ├── components.css
-│   │   └── globals.css
-│   │
-│   ├── utils/
-│   │   └── localStorage.js
-│   │
-│   ├── App.jsx
-│   └── main.jsx
+├── assets/
 │
-├── package.json
-├── vite.config.js
-└── README.md
+├── prompts/
+│
+└── app/
+    ├── public/
+    │
+    ├── src/
+    │   ├── assets/
+    │   │
+    │   ├── components/
+    │   │   ├── FilterBar.jsx
+    │   │   ├── Header.jsx
+    │   │   ├── JobCard.jsx
+    │   │   ├── JobForm.jsx
+    │   │   ├── JobList.jsx
+    │   │   ├── SearchBar.jsx
+    │   │   └── ThemeToggle.jsx
+    │   │
+    │   ├── styles/
+    │   │   ├── components.css
+    │   │   └── globals.css
+    │   │
+    │   ├── utils/
+    │   │   └── localStorage.js
+    │   │
+    │   ├── App.jsx
+    │   └── main.jsx
+    │
+    ├── package.json
+    ├── vite.config.js
+    └── README.md
+
+Skills Practiced
+React Development
+Component-Based Development
+AI-Assisted Development
+Prompt Engineering
+LocalStorage
+Debugging
+Code Review
+UI Development
+Documentation
+Git & GitHub
+Status
+
+✅ Completed

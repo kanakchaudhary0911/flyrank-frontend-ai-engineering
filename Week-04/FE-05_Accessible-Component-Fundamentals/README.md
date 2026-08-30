@@ -1,42 +1,37 @@
-# Week 4 – Frontend AI Engineering
+# FE-05 – Accessible Component Fundamentals
 
-This folder contains the work completed during **Week 4** of the FlyRank Frontend AI Engineering program.
+## Overview
 
-The focus of this week was building accessible React components from scratch using **React + TypeScript**, following **WAI-ARIA accessibility patterns**, and reviewing production-style component implementations.
+This assignment focuses on building reusable, keyboard-accessible UI components from scratch using React and TypeScript.
 
----
+The project follows **WAI-ARIA accessibility patterns** to ensure that each component supports proper keyboard interaction, focus management, and screen-reader semantics.
 
-## Assignment
-
-### FE-05 – Accessible Component Fundamentals
-
-**Objective**
-
-Build reusable and keyboard-accessible UI components from scratch while understanding accessibility patterns, keyboard interactions, focus management, and ARIA semantics.
-
-The assignment also includes a source-level review of **shadcn/ui Base UI** components to compare the hand-built implementations with an established component library.
+The assignment also includes a source-level review of the **shadcn/ui Base UI** Dialog and Tabs implementations, comparing the hand-built components against an established, production-grade component library.
 
 ---
 
-## Key Activities
+## Objectives
 
-- Build an accessible Modal Dialog from scratch
-- Implement keyboard navigation and focus management
-- Add proper ARIA dialog semantics
-- Build accessible Tabs with keyboard interaction
-- Build an accessible Disclosure component
-- Test components using keyboard navigation
-- Review open-source shadcn/ui Base UI Dialog and Tabs implementations
-- Compare custom implementations with library-based components
+- Build reusable UI components from scratch
+- Implement WAI-ARIA accessibility patterns
+- Manage keyboard navigation and focus
+- Add proper ARIA semantics to each component
+- Test components using keyboard-only navigation
+- Review open-source shadcn/ui Base UI implementations
+- Compare custom components with library-based components
 - Document accessibility and implementation decisions
 
 ---
 
-## Components Implemented
+## Project
 
-### 1. Modal Dialog
+### Accessible Component Set
 
-The Modal Dialog demonstrates:
+The project delivers three accessible, keyboard-navigable UI components built independently, along with a source review of equivalent shadcn/ui Base UI components.
+
+### Components Implemented
+
+**1. Modal Dialog**
 
 - Open and close functionality
 - Keyboard accessibility
@@ -47,9 +42,7 @@ The Modal Dialog demonstrates:
 - ARIA dialog semantics
 - Accessible labeling
 
-### 2. Tabs
-
-The Tabs component demonstrates:
+**2. Tabs**
 
 - Keyboard-accessible tab navigation
 - Active tab state
@@ -57,25 +50,77 @@ The Tabs component demonstrates:
 - ARIA tab semantics
 - Accessible relationships between tabs and panels
 
-### 3. Disclosure
-
-The Disclosure component demonstrates:
+**3. Disclosure**
 
 - Expand/collapse interaction
 - Keyboard-accessible button behavior
 - ARIA expanded state
 - Accessible relationship between trigger and content
 
+### shadcn/ui Source Review
+
+A source-level review of the **shadcn/ui Base UI Dialog and Tabs** implementations was conducted to compare accessibility patterns, structure, and implementation approach against the hand-built components.
+
 ---
 
-## shadcn/ui Source Review
+## Technology Stack
 
-The project also includes a source-level review of the **shadcn/ui Base UI Dialog and Tabs implementations**.
+- React
+- TypeScript
+- WAI-ARIA
+- HTML5
+- CSS3
+- Git & GitHub
+- AI-assisted development
 
-The reviewed source files are available in:
+---
+
+## Application Structure
 
 ```text
-playground/
-└── src/
-    └── components/
-        └── ui/
+FE-05-Accessible-Component-Fundamentals/
+│
+├── README.md
+│
+├── app/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Modal.tsx
+│   │   │   ├── Tabs.tsx
+│   │   │   └── Disclosure.tsx
+│   │   │
+│   │   ├── styles/
+│   │   │   └── globals.css
+│   │   │
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   │
+│   ├── package.json
+│   └── tsconfig.json
+│
+└── playground/
+    └── src/
+        └── components/
+            └── ui/
+```
+
+---
+
+## Skills Practiced
+
+- React Development
+- TypeScript
+- Accessibility (WAI-ARIA)
+- Keyboard Navigation
+- Focus Management
+- Component-Based Development
+- Source Code Review
+- UI Development
+- Documentation
+- Git & GitHub
+
+---
+
+## Status
+
+✅ Completed
