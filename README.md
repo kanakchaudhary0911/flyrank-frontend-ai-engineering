@@ -1,6 +1,3 @@
-Yeh raha final clean root README, Week 5 completion aur Week 6 in-progress ke saath — sabhi missing fences, tables fix kiye:
-
-markdown
 # FlyRank Frontend AI Engineering
 
 This repository contains my weekly assignments, projects, experiments, and learning progress completed as part of the **FlyRank Frontend AI Engineering** program.
@@ -98,6 +95,41 @@ The project demonstrated:
 
 ---
 
+### Week 6 – Frontend AI Engineering
+
+Currently in progress.
+
+Focused on frontend motion design, state-driven UI, meaningful micro-interactions, accessibility, keyboard interaction, reduced-motion support, and interaction safety.
+
+The week currently includes:
+
+- **FE-AA1 – Buttons with a Brain: Motion & State Micro-interactions** ✅
+
+FE-AA1 focused on building an interactive button that communicates its complete lifecycle through intentional motion and visual feedback.
+
+The project demonstrates:
+
+- Idle state
+- Hover and focus states
+- Loading state
+- Success state
+- Error state
+- Disabled state during loading
+- Success and Error demo triggers
+- Smooth CSS transitions
+- Success feedback animation
+- Error feedback animation
+- Spam-click protection
+- Keyboard accessibility
+- Visible focus state
+- `aria-live` feedback
+- `prefers-reduced-motion` support
+- Production build verification
+
+Week 6 is still in progress because additional assignments may be added as the internship continues.
+
+---
+
 ## Assignments
 
 ### FE-05 – Accessible Component Fundamentals
@@ -191,6 +223,27 @@ Key areas:
 - Manual improvements
 
 The application was also tested against an actual Gemini API quota failure to verify the error-handling experience.
+
+---
+
+### FE-AA1 – Buttons with a Brain: Motion & State Micro-interactions
+
+Built a reusable, state-driven interactive button that communicates its complete interaction lifecycle through intentional motion and visual feedback.
+
+Key areas:
+
+- React + TypeScript
+- Vite
+- State-driven UI
+- CSS transitions and animations
+- Micro-interactions
+- Motion design
+- Accessibility
+- Keyboard navigation
+- `aria-live` feedback
+- `prefers-reduced-motion` support
+- Spam-click protection
+- Testing and verification
 
 ---
 
@@ -322,7 +375,27 @@ FLYRANK-FRONTEND-AI-ENGINEERING/
 │           └── tsconfig.json
 │
 ├── Week-6/
-│   └── [Current Week 6 Work]
+│   ├── README.md
+│   │
+│   └── FE-AA1_Buttons-with-a-Brain-Motion-and-State-Micro-interactions/
+│       ├── README.md
+│       │
+│       └── app/
+│           ├── public/
+│           ├── src/
+│           │   ├── App.tsx
+│           │   ├── App.css
+│           │   ├── index.css
+│           │   └── main.tsx
+│           │
+│           ├── eslint.config.js
+│           ├── index.html
+│           ├── package.json
+│           ├── package-lock.json
+│           ├── tsconfig.app.json
+│           ├── tsconfig.json
+│           ├── tsconfig.node.json
+│           └── vite.config.ts
 │
 └── README.md
 ```
@@ -406,14 +479,14 @@ The work emphasizes:
 
 ## Current Progress
 
-| Week   |    Focus                                         |   Status       |
-|--------|--------------------------------------------------|----------------|
-| Week 1 | Environment, Toolchain & AI Workflow             | ✅ Completed   |
-| Week 2 | AI-Assisted Workflow & Prompting                 | ✅ Completed   |
-| Week 3 | Frontend AI Engineering                          | ✅ Completed   |
-| Week 4 | Accessibility & Streaming AI                     | ✅ Completed   |
-| Week 5 | Tool Results, Structured Output & Error Handling | ✅ Completed   |
-| Week 6 | Frontend AI Engineering                          | 🔄 In Progress |
+| Week   | Focus                                             | Status         |
+|--------|----------------------------------------------------|----------------|
+| Week 1 | Environment, Toolchain & AI Workflow               | ✅ Completed   |
+| Week 2 | AI-Assisted Workflow & Prompting                   | ✅ Completed   |
+| Week 3 | Frontend AI Engineering                            | ✅ Completed   |
+| Week 4 | Accessibility & Streaming AI                       | ✅ Completed   |
+| Week 5 | Tool Results, Structured Output & Error Handling   | ✅ Completed   |
+| Week 6 | Frontend AI Engineering                            | 🔄 In Progress |
 
 ---
 
