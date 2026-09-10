@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { DefaultChatTransport } from "ai";
 import { useChat } from "@ai-sdk/react";
+import ChatMessage from "../components/ChatMessage";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -98,170 +99,12 @@ export default function Home() {
         ) : (
           <div className="conversation">
             <div className="message-list">
-              {messages.map((message) => {
-                const isUser = message.role === "user";
-
-                const text = message.parts
-                  .filter((part) => part.type === "text")
-                  .map((part) => part.text)
-                  .join("");
-
-                /*
-                 * Find the structured analyzeContent tool result.
-                 * AI SDK tool parts use a type beginning with "tool-".
-                 */
-                const toolPart = message.parts.find(
-                  (part) =>
-                    part.type === "tool-analyzeContent"
-                );
-
-                /*
-                 * The tool result is available on the tool part.
-                 * We keep the UI flexible because the SDK may
-                 * represent the result differently depending
-                 * on its current state.
-                 */
-                const toolResult =
-                  toolPart &&
-                  "output" in toolPart
-                    ? toolPart.output
-                    : null;
-
-                return (
-                  <div
-                    key={message.id}
-                    className={`message ${isUser ? "user" : ""}`}
-                  >
-                    <div
-                      className={`message-avatar ${
-                        isUser
-                          ? "user-avatar"
-                          : "ai-avatar"
-                      }`}
-                    >
-                      {isUser ? "KC" : "✦"}
-                    </div>
-
-                    <div className="message-content">
-                      <div className="message-role">
-                        {isUser ? "You" : "Gemini AI"}
-                      </div>
-
-                      {/* Normal AI/User text */}
-                      {text && (
-                        <div className="message-text">
-                          {text}
-                        </div>
-                      )}
-
-                      {/* Structured Tool Result */}
-                      {toolResult &&
-                        typeof toolResult === "object" &&
-                        "topic" in toolResult && (
-                          <div className="tool-result-card">
-                            <div className="tool-result-header">
-                              <div>
-                                <div className="tool-result-label">
-                                  ✦ TOOL RESULT
-                                </div>
-
-                                <h3>
-                                  Structured Assessment
-                                </h3>
-                              </div>
-
-                              <div className="tool-result-score">
-                                {"score" in toolResult
-                                  ? String(
-                                      toolResult.score
-                                    )
-                                  : "—"}
-                              </div>
-                            </div>
-
-                            <div className="tool-result-topic">
-                              <span>Topic</span>
-
-                              <strong>
-                                {"topic" in toolResult
-                                  ? String(
-                                      toolResult.topic
-                                    )
-                                  : "—"}
-                              </strong>
-                            </div>
-
-                            <div className="tool-result-grid">
-                              <div className="tool-result-item">
-                                <span>Category</span>
-
-                                <strong>
-                                  {"category" in
-                                  toolResult
-                                    ? String(
-                                        toolResult.category
-                                      )
-                                    : "—"}
-                                </strong>
-                              </div>
-
-                              <div className="tool-result-item">
-                                <span>Difficulty</span>
-
-                                <strong>
-                                  {"difficulty" in
-                                  toolResult
-                                    ? String(
-                                        toolResult.difficulty
-                                      )
-                                    : "—"}
-                                </strong>
-                              </div>
-                            </div>
-
-                            <div className="tool-result-section">
-                              <span>Key Points</span>
-
-                              <ul>
-                                {"keyPoints" in
-                                  toolResult &&
-                                Array.isArray(
-                                  toolResult.keyPoints
-                                )
-                                  ? toolResult.keyPoints.map(
-                                      (
-                                        point: unknown,
-                                        index: number
-                                      ) => (
-                                        <li key={index}>
-                                          {String(point)}
-                                        </li>
-                                      )
-                                    )
-                                  : null}
-                              </ul>
-                            </div>
-
-                            <div className="tool-result-recommendation">
-                              <span>
-                                Recommendation
-                              </span>
-
-                              <p>
-                                {"recommendation" in
-                                toolResult
-                                  ? String(
-                                      toolResult.recommendation
-                                    )
-                                  : "—"}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                    </div>
-                  </div>
-                );
-              })}
+              {messages.map((message) => (
+                <ChatMessage
+                  key={message.id}
+                  message={message as any}
+                />
+              ))}
 
               {isStreaming &&
                 messages[messages.length - 1]?.role ===
