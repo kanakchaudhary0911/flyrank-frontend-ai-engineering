@@ -2,23 +2,21 @@
 
 This repository contains my weekly assignments, projects, experiments, and learning progress completed as part of the **FlyRank Frontend AI Engineering** program.
 
-The repository documents my journey through AI-assisted software development, prompt engineering, frontend engineering, accessibility, Git workflows, documentation, testing, debugging, streaming AI applications, structured tool calling, error handling, and practical project development.
+The repository documents my journey through AI-assisted software development, prompt engineering, frontend engineering, accessibility, Git workflows, documentation, testing, debugging, streaming AI applications, structured tool calling, error handling, motion design, and interactive 3D web experiences.
 
 The goal is to build strong engineering fundamentals while learning how to use AI effectively as a development assistant.
-
-🟢 **Week 6 Completed · Internship In Progress**
 
 ---
 
 ## 🚧 Currently Working On
 
-**Week 6 — Frontend AI Engineering** has been completed.
+**Week 7 — Frontend AI Engineering** is currently in progress.
 
 Week 1 through Week 6 assignments have been completed, documented, tested, and organized in this repository.
 
-The internship is still ongoing, so the repository remains **in progress** as new weekly assignments, experiments, reviews, and refinements are added.
+The first Week 7 assignment, **FE-AA2 — First 3D Experience on the Web**, has been completed, tested, optimized, and documented.
 
-The next assignments and upcoming weeks will be added to this repository as they become available.
+The internship is still ongoing, so the repository remains **in progress** as new weekly assignments, experiments, reviews, and refinements are added.
 
 ---
 
@@ -101,7 +99,7 @@ The project demonstrated:
 
 ### Week 6 – Frontend AI Engineering
 
-Completed.
+**Completed.**
 
 Focused on frontend motion design, state-driven UI, meaningful micro-interactions, accessibility, keyboard interaction, reduced-motion support, interaction safety, component testing, end-to-end testing, API mocking, and CI automation.
 
@@ -153,7 +151,59 @@ The project demonstrates:
 - 14 passing component tests
 - Primary E2E flow verification
 
-Week 6 has been completed with both assignments implemented, tested, documented, and verified.
+Week 6 was completed with both assignments implemented, tested, documented, and verified.
+
+---
+
+### Week 7 – Interactive 3D Web Experience
+
+**In Progress.**
+
+Week 7 introduces interactive 3D web development, responsible loading, device-aware fallbacks, responsive interaction, and performance optimization.
+
+The first assignment completed this week is:
+
+- **FE-AA2 – First 3D Experience on the Web** ✅
+
+#### FE-AA2 – First 3D Experience on the Web
+
+Built a lightweight interactive 3D experience called **Blue Orbit** using React, TypeScript, Three.js, and React Three Fiber.
+
+The project demonstrates:
+
+- Real 3D scene rendering
+- Procedural 3D geometry
+- Interactive 3D orb
+- Mouse orbit interaction
+- Touch interaction
+- Click/tap interaction
+- Orb scale and brightness feedback
+- Continuous rotation
+- Floating animation
+- Responsive layout
+- Lazy-loaded 3D experience
+- `prefers-reduced-motion` fallback
+- Lower-power device fallback
+- DPR capped at `1.5`
+- Three.js code splitting
+- Production build optimization
+- Mobile-friendly interaction
+
+**FE-AA2 Performance**
+
+The initial production build identified a large Three.js chunk.
+
+The bundle was then optimized using code splitting so that the Three.js dependency was divided into smaller production chunks.
+
+Final relevant production chunks:
+
+```text
+react   → ~178 KB
+r3f     → ~183 KB
+three   → ~331 KB + ~370 KB
+```
+
+The final production build completed successfully without the previous chunk-size warning.
 
 ---
 
@@ -301,6 +351,32 @@ The test suite includes **14 passing component tests** and a Playwright test cov
 
 ---
 
+### FE-AA2 – First 3D Experience on the Web
+
+Built a lightweight interactive 3D web experience using React Three Fiber and Three.js.
+
+Key areas:
+
+- React + TypeScript
+- Three.js
+- React Three Fiber
+- 3D scene composition
+- Procedural geometry
+- Orbit controls
+- Mouse and touch interaction
+- Interactive 3D object
+- Animation
+- Responsive design
+- Lazy loading
+- Performance optimization
+- Code splitting
+- Reduced-motion support
+- Device-aware fallback
+- Mobile support
+- Production build optimization
+
+---
+
 ## Repository Structure
 
 ```text
@@ -341,45 +417,9 @@ FLYRANK-FRONTEND-AI-ENGINEERING/
 │   │   ├── README.md
 │   │   ├── NOTES.md
 │   │   └── playground/
-│   │       ├── src/
-│   │       │   ├── components/
-│   │       │   │   ├── Modal.tsx
-│   │       │   │   ├── Tabs.tsx
-│   │       │   │   ├── Disclosure.tsx
-│   │       │   │   └── ui/
-│   │       │   │       ├── dialog.tsx
-│   │       │   │       └── tabs.tsx
-│   │       │   │
-│   │       │   ├── App.tsx
-│   │       │   ├── App.css
-│   │       │   ├── index.css
-│   │       │   └── main.tsx
-│   │       │
-│   │       ├── package.json
-│   │       ├── tsconfig.json
-│   │       ├── vite.config.ts
-│   │       └── index.html
 │   │
 │   └── FE-06_Streaming-AI-Chat/
 │       └── app/
-│           ├── app/
-│           │   ├── api/
-│           │   │   └── chat/
-│           │   │       └── route.ts
-│           │   │
-│           │   ├── globals.css
-│           │   ├── layout.tsx
-│           │   └── page.tsx
-│           │
-│           ├── lib/
-│           │   └── model.ts
-│           │
-│           ├── .env.example
-│           ├── .gitignore
-│           ├── next-env.d.ts
-│           ├── package.json
-│           ├── package-lock.json
-│           └── tsconfig.json
 │
 ├── Week-5/
 │   ├── README.md
@@ -397,75 +437,47 @@ FLYRANK-FRONTEND-AI-ENGINEERING/
 │       ├── AI_ASSISTANCE.md
 │       ├── AI_PROMPTS.md
 │       ├── MANUAL_IMPROVEMENTS.md
-│       │
 │       ├── screenshots/
-│       │   ├── FE-08_01_Basic-UI.png
-│       │   ├── FE-08_02_Error-State.png
-│       │   ├── FE-08_03_Retry-Processing.png
-│       │   ├── FE-08_04_API-Error-Log.png
-│       │   └── ...
-│       │
 │       └── app/
-│           ├── app/
-│           │   ├── api/
-│           │   │   └── chat/
-│           │   │       └── route.ts
-│           │   │
-│           │   ├── globals.css
-│           │   ├── layout.tsx
-│           │   └── page.tsx
-│           │
-│           ├── lib/
-│           │   ├── model.ts
-│           │   └── tools/
-│           │       ├── analyze-content.ts
-│           │       └── analyze-website.ts
-│           │
-│           ├── .env.example
-│           ├── .gitignore
-│           ├── next-env.d.ts
-│           ├── package.json
-│           ├── package-lock.json
-│           └── tsconfig.json
 │
 ├── Week-6/
 │   ├── README.md
 │   │
 │   ├── FE-AA1_Buttons-with-a-Brain-Motion-and-State-Micro-interactions/
 │   │   ├── README.md
-│   │   │
 │   │   └── app/
-│   │       ├── public/
-│   │       ├── src/
-│   │       │   ├── App.tsx
-│   │       │   ├── App.css
-│   │       │   ├── index.css
-│   │       │   └── main.tsx
-│   │       ├── eslint.config.js
-│   │       ├── index.html
-│   │       ├── package.json
-│   │       ├── package-lock.json
-│   │       ├── tsconfig.app.json
-│   │       ├── tsconfig.json
-│   │       ├── tsconfig.node.json
-│   │       └── vite.config.ts
 │   │
 │   └── FE-09_Testing-Pass/
 │       ├── README.md
 │       ├── .github/
-│       │   └── workflows/
-│       │       └── playwright.yml
 │       ├── e2e/
-│       │   └── primary-flow.spec.ts
 │       ├── tests/
-│       │   ├── ChatMessage.test.jsx
-│       │   ├── JobForm.test.jsx
-│       │   └── setup.js
-│       ├── .gitignore
+│       ├── package.json
+│       └── playwright.config.ts
+│
+├── Week-07/
+│   ├── README.md
+│   │
+│   └── FE-AA2_First-3D-Experience/
+│       ├── README.md
+│       ├── src/
+│       │   ├── components/
+│       │   │   ├── Experience.tsx
+│       │   │   ├── Orb.tsx
+│       │   │   └── Scene.tsx
+│       │   │
+│       │   ├── App.tsx
+│       │   ├── App.css
+│       │   ├── index.css
+│       │   └── main.tsx
+│       │
+│       ├── index.html
 │       ├── package.json
 │       ├── package-lock.json
-│       ├── playwright.config.ts
-│       └── vitest.config.js
+│       ├── tsconfig.json
+│       ├── tsconfig.app.json
+│       ├── tsconfig.node.json
+│       └── vite.config.ts
 │
 └── README.md
 ```
@@ -481,6 +493,16 @@ FLYRANK-FRONTEND-AI-ENGINEERING/
 - Next.js
 - HTML
 - CSS
+- Vite
+
+**3D Web**
+
+- Three.js
+- React Three Fiber
+- @react-three/drei
+- 3D scene composition
+- Procedural geometry
+- 3D interaction
 
 **AI Engineering**
 
@@ -507,6 +529,7 @@ FLYRANK-FRONTEND-AI-ENGINEERING/
 - Keyboard Navigation
 - Focus Management
 - Accessible UI Patterns
+- Reduced Motion
 
 **Development Tools**
 
@@ -552,6 +575,11 @@ The work emphasizes:
 - Server-side execution
 - Error handling
 - Edge-case handling
+- Motion design
+- Interaction design
+- 3D web development
+- Performance optimization
+- Responsive experiences
 - Documentation
 - Git and GitHub workflows
 - Practical frontend project development
@@ -568,7 +596,16 @@ The work emphasizes:
 | Week 4 | Accessibility & Streaming AI                       | ✅ Completed   |
 | Week 5 | Tool Results, Structured Output & Error Handling   | ✅ Completed   |
 | Week 6 | Motion, Micro-interactions & Testing               | ✅ Completed   |
-| Next   | Upcoming Internship Assignments                    | 🔄 In Progress |
+| Week 7 | Interactive 3D Web Experience                      | 🟡 In Progress |
+
+---
+
+## Week 7 Assignment Progress
+
+| Assignment | Title | Status |
+|---|---|---|
+| FE-AA2 | First 3D Experience on the Web | ✅ Completed |
+| Upcoming | Next Week 7 Assignment | ⏳ Upcoming |
 
 ---
 
@@ -578,7 +615,7 @@ This repository serves as a practical record of my progress through the FlyRank 
 
 Each week's work demonstrates a combination of technical implementation, AI-assisted workflows, experimentation, debugging, testing, documentation, and manual engineering decisions.
 
-The projects progressively move from basic AI-assisted workflows toward building production-oriented frontend applications that integrate AI models, streaming, server-side tools, structured data, validated tool execution, and resilient user experiences.
+The projects progressively move from basic AI-assisted workflows toward building production-oriented frontend applications involving AI models, streaming, server-side tools, structured data, validated tool execution, resilient user experiences, motion-driven interfaces, automated testing, and interactive 3D experiences.
 
 ---
 
@@ -588,38 +625,57 @@ This is a **live, evolving repository** tied to an active internship.
 
 Weeks 1–6 have been completed and documented.
 
-The internship is still in progress, so upcoming assignments, new weeks, experiments, reviews, and refinements will continue to be added as the program progresses.
+Week 7 is currently in progress. **FE-AA2 — First 3D Experience on the Web** has been completed and documented, while the remaining Week 7 assignment is yet to be completed.
 
 The repository will be updated regularly to reflect the latest internship progress.
 
 ---
 
-## Week 6 Completion
+## Week 7 Progress
 
-**Week 6 – Frontend AI Engineering is complete.** ✅
+**Week 7 – Frontend AI Engineering is currently in progress.** 🟡
 
-### Completed Assignments
+**Completed**
 
-- **FE-AA1 – Buttons with a Brain: Motion & State Micro-interactions** ✅
-- **FE-09 – Testing Pass** ✅
+- [x] FE-AA2 – First 3D Experience on the Web
+  - [x] Interactive 3D scene
+  - [x] Procedural 3D orb
+  - [x] Mouse and touch interaction
+  - [x] Click/tap interaction
+  - [x] Responsive layout
+  - [x] Reduced-motion fallback
+  - [x] Lower-power device fallback
+  - [x] Lazy-loaded 3D experience
+  - [x] DPR optimization
+  - [x] Three.js code splitting
+  - [x] Production build verification
+  - [x] Documentation completed
 
-### Week 6 Highlights
+**Upcoming**
 
-- State-driven interactive UI
-- Intentional motion and micro-interactions
-- Accessibility and keyboard interaction
-- Reduced-motion support
-- Spam-click protection
-- Vitest component testing
-- React Testing Library
-- Playwright E2E testing
-- AI API mocking
-- GitHub Actions CI
-- Automated test validation
-- Documentation and production verification
+- [ ] Next Week 7 assignment
+- [ ] Implementation and testing
+- [ ] Documentation
+- [ ] Final Week 7 verification
 
-**Final Status: 🟢 Week 6 Completed**
+```text
+Week 07
+│
+├── FE-AA2
+│   └── ✅ Completed
+│
+└── Next Assignment
+    └── ⏳ Upcoming
+```
 
-The internship continues into the next phase, with upcoming weeks expected to build on the motion design, state-driven UI, and testing foundations established so far.
+---
 
-More assignments, projects, and refinements are on the way as the program progresses — this repository will keep growing to reflect that.
+## Internship Status
+
+🟢 **Weeks 1–6 Completed**
+
+🟡 **Week 7 In Progress**
+
+The internship continues into the next phase, with upcoming assignments expected to build on the frontend engineering, accessibility, testing, motion design, performance optimization, and interactive web foundations established so far.
+
+More assignments, projects, experiments, and refinements are on the way as the program progresses.
