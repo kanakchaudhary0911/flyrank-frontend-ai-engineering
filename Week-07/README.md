@@ -9,7 +9,7 @@ This folder contains the work completed during **Week 7** of the FlyRank Fronten
 | Assignment | Title | Status |
 |---|---|---|
 | FE-AA2 | First 3D Experience on the Web | ✅ Completed |
-| Next Assignment | Upcoming Week 7 Assignment | ⏳ Not Started |
+| FE-10 | Accessibility and Performance Audit | ✅ Completed |
 
 ---
 
@@ -43,9 +43,7 @@ The assignment focused on creating an interactive 3D scene while keeping the exp
 - Verify the production build
 - Document performance decisions
 
----
-
-## Interaction
+**Interaction**
 
 The experience supports multiple forms of interaction:
 
@@ -55,9 +53,7 @@ The experience supports multiple forms of interaction:
 - **Responsive Layout** — The experience adapts to different screen sizes.
 - **Static Fallback** — Reduced-motion and lower-power devices receive a simplified visual experience.
 
----
-
-## Interaction Flow
+**Interaction Flow**
 
 ```text
 Open Experience
@@ -77,9 +73,7 @@ Returns to Normal State
 
 The main interaction goes beyond orbit controls: clicking or tapping the orb changes its scale and visual intensity.
 
----
-
-## Visual Direction
+**Visual Direction**
 
 The experience uses a cool blue visual direction inspired by:
 
@@ -91,13 +85,11 @@ The experience uses a cool blue visual direction inspired by:
 
 The final interface uses a minimal midnight-blue environment with a bright blue 3D orb and soft atmospheric lighting.
 
----
-
-## Performance & Loading
+**Performance & Loading**
 
 The 3D experience was designed to load responsibly.
 
-**Performance Decisions**
+*Performance Decisions*
 
 - Procedural `icosahedronGeometry` is used instead of a large external GLB model.
 - The 3D experience is lazy-loaded with `React.lazy`.
@@ -107,7 +99,7 @@ The 3D experience was designed to load responsibly.
 - Three.js dependencies are code-split into separate production chunks.
 - The main page content does not depend on the 3D canvas to communicate its purpose.
 
-**Production Build**
+*Production Build*
 
 ```text
 react   → ~178 KB
@@ -119,9 +111,7 @@ The Three.js bundle was split into multiple chunks so that no individual JavaScr
 
 The final production build completed successfully without chunk-size warnings.
 
----
-
-## Accessibility & Device Support
+**Accessibility & Device Support**
 
 - Mouse interaction supported
 - Touch interaction supported
@@ -131,6 +121,77 @@ The final production build completed successfully without chunk-size warnings.
 - Lower-power device fallback
 - 3D experience remains contained within a responsive card
 - Main content remains understandable without interacting with the 3D scene
+
+---
+
+### FE-10 – Accessibility and Performance Audit
+
+**Objective**
+
+Audit and improve the Week 7 3D experience for accessibility and performance using Lighthouse, WAVE, and manual keyboard testing.
+
+**Audit Activities**
+
+- Run Lighthouse Mobile audit before changes
+- Run WAVE accessibility audit before changes
+- Perform keyboard-only testing
+- Add a keyboard-accessible control for the 3D interaction
+- Add visible focus styling
+- Improve small-text readability
+- Run Lighthouse Mobile audit after changes
+- Run WAVE audit after changes
+- Document measurable before/after results
+- Verify the production build
+- Document audit evidence in `AUDIT.md`
+
+**Lighthouse Results**
+
+| Metric | Before | After | Delta |
+|---|---:|---:|---|
+| Performance | 89 | 92 | +3 |
+| Accessibility | 100 | 100 | Maintained |
+| Best Practices | 100 | 100 | Maintained |
+| SEO | 90 | 90 | Maintained |
+
+**WAVE Results**
+
+| Metric | Before | After | Delta |
+|---|---:|---:|---|
+| Errors | 0 | 0 | Maintained |
+| Contrast Errors | 0 | 0 | Maintained |
+| Alerts | 1 | 0 | -1 |
+| AIM Score | 10/10 | 10/10 | Maintained |
+
+**Keyboard Testing**
+
+The primary 3D interaction was tested using keyboard-only navigation.
+
+Verified:
+
+- `Tab` reaches the accessible control
+- `Enter` activates the control
+- `Space` activates the control
+- Visible focus state is present
+- The orb interaction can be operated without relying exclusively on a mouse
+
+**FE-06 AI Chat Verification**
+
+The existing FE-06 Streaming AI Chat was also manually checked for keyboard accessibility because FE-10 itself does not contain an AI chat interface.
+
+Verified:
+
+- Chat input is keyboard reachable
+- Primary chat flow can be navigated using `Tab`
+- AI response streaming works during normal interaction
+- Stop/control interaction was manually checked
+
+The FE-06 WAVE scan could not successfully load the dynamic deployed application, so no FE-06 WAVE score is claimed.
+
+**Audit Documentation**
+
+Detailed audit evidence, screenshots, findings, fixes, and before/after measurements are documented in:
+
+`FE-10_Accessibility-and-Performance-Audit/AUDIT.md`
 
 ---
 
@@ -165,6 +226,9 @@ The final production build completed successfully without chunk-size warnings.
 - Animation
 - Interaction Design
 - Accessibility
+- Keyboard Navigation
+- Lighthouse Auditing
+- WAVE Auditing
 - Production Builds
 - Debugging
 - Documentation
@@ -178,9 +242,37 @@ Week-07/
 │
 ├── README.md
 │
-└── FE-AA2_First-3D-Experience/
+├── FE-AA2_First-3D-Experience/
+│   │
+│   ├── README.md
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Experience.tsx
+│   │   │   ├── Orb.tsx
+│   │   │   └── Scene.tsx
+│   │   ├── App.tsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.tsx
+│   │
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── tsconfig.json
+│   ├── tsconfig.app.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+│
+└── FE-10_Accessibility-and-Performance-Audit/
     │
     ├── README.md
+    ├── AUDIT.md
+    ├── screenshots/
+    │   ├── lighthouse-before.png
+    │   ├── lighthouse-after.png
+    │   ├── wave-before.png
+    │   └── wave-after.png
+    │
     ├── src/
     │   ├── components/
     │   │   ├── Experience.tsx
@@ -224,6 +316,24 @@ The 3D experience was manually verified for:
 - [x] Production build
 - [x] No chunk-size warning after optimization
 
+### FE-10 Testing
+
+- [x] Lighthouse Mobile baseline recorded
+- [x] WAVE baseline recorded
+- [x] Keyboard-only testing completed
+- [x] Keyboard-accessible 3D control added
+- [x] Visible focus state added
+- [x] Small-text accessibility issue addressed
+- [x] Lighthouse Mobile after audit completed
+- [x] WAVE after audit completed
+- [x] Performance score reached 90+
+- [x] Accessibility score reached 90+
+- [x] WAVE Errors = 0
+- [x] WAVE Contrast Errors = 0
+- [x] WAVE Alerts = 0
+- [x] Before/after screenshots added
+- [x] AUDIT.md completed
+
 ---
 
 ## What I Learned
@@ -238,6 +348,10 @@ The 3D experience was manually verified for:
 - Performance decisions should be made while building the experience, not only after it is finished.
 - A static fallback can make a 3D experience more resilient across different devices.
 - Responsive layout is especially important when combining 3D content with text.
+- Accessibility should be verified through both automated tools and manual keyboard testing.
+- Native interactive elements provide a reliable keyboard-accessible alternative to pointer-only interactions.
+- Lighthouse and WAVE help identify different categories of accessibility and performance issues.
+- Before/after measurements make optimization work easier to evaluate.
 
 ---
 
@@ -250,7 +364,10 @@ The 3D experience was manually verified for:
 - Adding rotation and floating motion.
 - Supporting both mouse and mobile interactions.
 - Optimizing the Three.js bundle after the initial production build showed a large chunk.
-- Seeing the final production build complete without chunk-size warnings.
+- Improving the experience through accessibility testing.
+- Making the 3D interaction keyboard accessible.
+- Seeing the final Lighthouse Performance score reach 92.
+- Getting 100 Accessibility and 10/10 WAVE AIM Score after the audit.
 
 ---
 
@@ -262,15 +379,15 @@ Week 07
 ├── FE-AA2
 │   └── ✅ Completed
 │
-└── Next Assignment
-    └── ⏳ Upcoming
+└── FE-10
+    └── ✅ Completed
 ```
 
 ---
 
 ## Week 7 Status
 
-🟡 **Week 7 In Progress**
+🟢 **Week 7 Completed**
 
 **Completed**
 
@@ -286,21 +403,28 @@ Week 07
   - [x] Three.js code splitting
   - [x] Production build verified
   - [x] Documentation completed
-
-**Upcoming**
-
-- [ ] Next Week 7 assignment
-- [ ] Complete and document upcoming assignment
-- [ ] Update Week 7 README
-- [ ] Final Week 7 testing
-- [ ] Final Week 7 status
+- [x] FE-10 — Accessibility and Performance Audit
+  - [x] Lighthouse baseline
+  - [x] WAVE baseline
+  - [x] Keyboard-only testing
+  - [x] Accessibility fixes
+  - [x] Performance verification
+  - [x] Lighthouse after audit
+  - [x] WAVE after audit
+  - [x] Before/after screenshots
+  - [x] AUDIT.md completed
 
 ---
 
 ## Completion Status
 
-**Week 7 – Frontend AI Engineering is currently in progress.** 🟡
+**Week 7 – Frontend AI Engineering is completed.** 🟢
 
-The first Week 7 assignment, **FE-AA2 — First 3D Experience on the Web**, has been implemented, tested, optimized, and documented.
+Both Week 7 assignments have been completed:
 
-The remaining Week 7 assignment will be added to this README once it is completed.
+- **FE-AA2 — First 3D Experience on the Web** ✅
+- **FE-10 — Accessibility and Performance Audit** ✅
+
+The 3D experience was built, optimized, accessibility-tested, and documented. The final Lighthouse and WAVE results were recorded in `AUDIT.md` with before/after evidence.
+
+**Week 7 Status: COMPLETE ✅**
